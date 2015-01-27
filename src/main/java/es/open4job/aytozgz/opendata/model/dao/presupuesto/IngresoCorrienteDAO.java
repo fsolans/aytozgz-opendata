@@ -6,7 +6,11 @@ import java.util.List;
 import es.open4job.aytozgz.opendata.model.vo.presupuesto.GastoCorrienteVO;
 import es.open4job.aytozgz.opendata.model.vo.presupuesto.IngresoCorrienteVO;
 
-public class IngresoCorrienteDAO {
+public class IngresoCorrienteDAO extends AbstractDAO {
+
+	public IngresoCorrienteDAO(String driver, String url, String user, String password) {
+		super(driver, url, user, password);
+	}
 
 	// Listado de ingresos
 	public List<IngresoCorrienteVO> getListadoIngresos() {
