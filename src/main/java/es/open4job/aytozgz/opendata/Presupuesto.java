@@ -1,11 +1,14 @@
 package es.open4job.aytozgz.opendata;
 
 import java.sql.SQLException;
+import java.util.Iterator;
+import java.util.List;
 
 import es.open4job.aytozgz.opendata.model.dao.presupuesto.GastoCorrienteDAO;
 import es.open4job.aytozgz.opendata.model.dao.presupuesto.IngresoCorrienteDAO;
+import es.open4job.aytozgz.opendata.model.vo.presupuesto.GastoCorrienteVO;
 
-public class App {
+public class Presupuesto {
 
 	public static void main(String[] args) {
 
@@ -24,18 +27,21 @@ public class App {
 		GastoCorrienteDAO gastoCorrienteDAO = new GastoCorrienteDAO(driver,
 				url, user, password);
 
-		IngresoCorrienteDAO ingresoCorrienteDAO = new IngresoCorrienteDAO(
-				driver, url, user, password);
+		List<GastoCorrienteVO> gastos = gastoCorrienteDAO.getListadoGastos();
 
-		try {
-			gastoCorrienteDAO.prueba();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (gastos != null) {
+		
+			Iterator<GastoCorrienteVO> iterator = gastos.iterator();
+			
+			while (iterator.hasNext()) {
+			
+				GastoCorrienteVO gasto = iterator.next();
+				System.out.println(gasto.toString());
+			
+			}
+			
 		}
-
+		
 	}
 
 }

@@ -211,4 +211,23 @@ public class GastoCorrienteVO {
 		this.area = area;
 	}
 
+	public String toString() {
+
+		return ("GastoCorrienteVO  = [" + "obligacionPendientePago = "
+				+ obligacionPendientePago + ", " + "creditoModificacion = "
+				+ creditoModificacion + ", " + ", organo = " + organo + ", "
+				+ ", obligacionNeta = " + obligacionNeta + ", "
+				+ ", idOrgano = " + idOrgano + ", " + ", id = " + id + ", "
+				+ ", fecha = " + fecha + ", " + ", concepto = " + concepto
+				+ ", " + ", partida = " + concepto + ", " + ", idCapitulo = "
+				+ idCapitulo + ", " + ", creditoDefinitivo = "
+				+ creditoDefinitivo + ", " + ", capitulo = " + capitulo + ", "
+				+ ", creditoInicial = " + creditoInicial + ", " + ", idArea = "
+				+ idArea + ", " + ", pagoNeto = " + pagoNeto + ", "
+				+ ", gastoComprometido = " + gastoComprometido + ", "
+				+ ", remanenteDeCredito = " + remanenteDeCredito + ", "
+				+ ", area = " + area + " ]");
+
+	}
+
 }

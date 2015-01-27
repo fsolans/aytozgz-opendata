@@ -2,12 +2,13 @@ package es.open4job.aytozgz.opendata.model.dao.presupuesto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GenericDAO {
+
+	public static final Logger logger = Logger.getLogger(GenericDAO.class.getName());
 
 	private String driver;
 
@@ -68,39 +69,13 @@ public class GenericDAO {
 			connection = DriverManager.getConnection(url, user, password);
 
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Exception : " + e.getMessage() );
 			throw e;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Exception : " + e.getMessage() );
 			throw e;
 		}
 
-	}
-
-	public void prueba() throws SQLException, ClassNotFoundException {
-
-		this.abrirConexion();
-		
-		Statement stmt = null;
-		
-		String query = "SELECT * FROM APARCAMIENTOSPERDISCAP";
-		try {
-			stmt = connection.createStatement();
-			ResultSet rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				int id = rs.getInt(1);
-				System.out.println ("id = " + id);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if (stmt != null) {
-				stmt.close();
-			}
-		}
-
-		this.cerrarConexion();
-		
 	}
 
 	public void cerrarConexion() {
@@ -113,6 +88,7 @@ public class GenericDAO {
 			}
 
 		}
+		
 	}
 
 }

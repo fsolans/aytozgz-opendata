@@ -2,11 +2,13 @@ package es.open4job.aytozgz.opendata.model.dao.presupuesto;
 
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
-import es.open4job.aytozgz.opendata.model.vo.presupuesto.GastoCorrienteVO;
 import es.open4job.aytozgz.opendata.model.vo.presupuesto.IngresoCorrienteVO;
 
 public class IngresoCorrienteDAO extends GenericDAO {
+
+	public static final Logger logger = Logger.getLogger(IngresoCorrienteDAO.class.getName());
 
 	public IngresoCorrienteDAO(String driver, String url, String user, String password) {
 		super(driver, url, user, password);
