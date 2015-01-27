@@ -7,7 +7,7 @@ import java.util.List;
 
 import es.open4job.aytozgz.opendata.model.vo.presupuesto.GastoCorrienteVO;
 
-public class GastoCorrienteDAO extends AbstractDAO {
+public class GastoCorrienteDAO extends GenericDAO {
 
 	public GastoCorrienteDAO(String driver, String url, String user, String password) {
 		super(driver, url, user, password);

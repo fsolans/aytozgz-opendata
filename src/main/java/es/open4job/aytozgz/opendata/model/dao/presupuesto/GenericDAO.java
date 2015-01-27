@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 
-public class AbstractDAO {
+public class GenericDAO {
 
 	private String driver;
 
@@ -19,7 +19,7 @@ public class AbstractDAO {
 
 	protected Connection connection = null;
 
-	public AbstractDAO(String driver, String url, String user, String password) {
+	public GenericDAO(String driver, String url, String user, String password) {
 
 		this.driver = driver;
 		this.url = url;
